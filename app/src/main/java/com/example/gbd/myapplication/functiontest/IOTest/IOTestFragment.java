@@ -1,4 +1,4 @@
-package com.example.gbd.myapplication;
+package com.example.gbd.myapplication.functiontest.IOTest;
 
 import android.app.Fragment;
 import android.os.Bundle;
@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import com.example.gbd.myapplication.R;
 
 import java.io.File;
 import java.io.IOException;

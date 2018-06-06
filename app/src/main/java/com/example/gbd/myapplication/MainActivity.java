@@ -1,6 +1,7 @@
 package com.example.gbd.myapplication;
 
 import android.app.Fragment;
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.FragmentTransaction;
 import android.widget.TextView;
@@ -11,6 +12,8 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+
+import com.example.gbd.myapplication.functiontest.FunctionTestMainActivity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,34 +56,17 @@ public class MainActivity extends AppCompatActivity {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
-        Fragment frag = null;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         } else if (id == R.id.action_io) {
-            frag = getFragment(FRG_TYPE.IO_TEST);
+            Intent intent = new Intent(this, FunctionTestMainActivity.class);
+            startActivity(intent);
         }
 
-        if (frag != null) {
-            FragmentTransaction transaction = getFragmentManager().beginTransaction();
-            transaction.add(R.id.fragment, frag);
-            transaction.commit();
-        }
+
 
         return super.onOptionsItemSelected(item);
-    }
-
-    enum FRG_TYPE {
-        IO_TEST
-    }
-
-    Fragment getFragment(FRG_TYPE type) {
-        switch (type) {
-            case IO_TEST:
-                return new IOTestFragment();
-            default:
-                return null;
-        }
     }
 
     /**
