@@ -2,6 +2,7 @@ package com.example.gbd.myapplication.functiontest.IOTest;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.os.Environment;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,18 +32,46 @@ public class IOTestFragment extends Fragment {
         btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                File f = new File("/sdcard/iotest", "test.txt");
+                String path = getContext().getFilesDir().getPath() ;
+                String lineSeparator = System.getProperty("line.separator", "/n");
+                File f = new File(path + "/iotest", "test.txt");
+                File f1 = new File(path, "test.txt");
                 StringBuffer sb = new StringBuffer();
+
+                sb.append("path is " + path);
+                sb.append(lineSeparator);
+                sb.append("file name is " + f.getAbsolutePath());
+                sb.append(lineSeparator);
+                sb.append("f1 name is " + f1.getAbsolutePath());
+                sb.append(lineSeparator);
                 boolean res = false;
                 if (!f.exists()) {
                     try {
+                        sb.append("create f ");
+                        sb.append(lineSeparator);
                         res = f.createNewFile();
                         sb.append("result is " + res);
                     } catch (IOException e) {
                         sb.append("  failed with " + e);
                     }
                 } else {
-                    sb.append("file is already exists");
+                    sb.append("f is already exists");
+                }
+
+                sb.append(lineSeparator);
+                sb.append(lineSeparator);
+
+                if (!f1.exists()) {
+                    try {
+                        sb.append("create f1 ");
+                        sb.append(lineSeparator);
+                        res = f1.createNewFile();
+                        sb.append("result is " + res);
+                    } catch (IOException e) {
+                        sb.append("  failed with " + e);
+                    }
+                } else {
+                    sb.append("f1 is already exists");
                 }
 
                 tv.setText(sb.toString());

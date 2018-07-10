@@ -6,14 +6,15 @@
 
     <Button
         android:id="@+id/io_test_button"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Button"
+        android:layout_margin="100dp"
+        android:text="Test Button"
         tools:text="test" />
 
     <TextView
         android:id="@+id/io_test_textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TextView" />
+        android:text="press button to run the function" />
 </LinearLayout>

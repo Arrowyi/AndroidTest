@@ -9,6 +9,6 @@
         app:showAsAction="never" />
     <item android:id="@+id/action_io"
         android:orderInCategory="101"
-        android:title="io test"
+        android:title="Function test"
         app:showAsAction="never" />
 </menu>
