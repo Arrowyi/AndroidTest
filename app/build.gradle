@@ -26,6 +26,15 @@ android {
             path "CMakeLists.txt"
         }
     }
+
+    flavorDimensions 'default'
+
+    productFlavors{
+        otherFlavorTest{
+            dimension 'default'
+            applicationId "com.example.gbd.otherflavortest"
+        }
+    }
 }
 
 dependencies {
