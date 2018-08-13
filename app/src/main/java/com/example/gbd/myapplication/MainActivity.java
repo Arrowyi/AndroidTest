@@ -58,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            addressAndVarTest("addressAndVarTest test");
             return true;
         } else if (id == R.id.action_io) {
             Intent intent = new Intent(this, FunctionTestMainActivity.class);
@@ -74,4 +75,6 @@ public class MainActivity extends AppCompatActivity {
      * which is packaged with this application.
      */
     public native String stringFromJNI();
+
+    public native void addressAndVarTest(String text);
 }
