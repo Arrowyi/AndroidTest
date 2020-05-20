@@ -1,4 +1,4 @@
-package com.example.gbd.myapplication.functiontest;
+package com.example.gbd.myapplication;
 
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -7,9 +7,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.gbd.myapplication.R;
-import com.example.gbd.myapplication.functiontest.ManuItemFragment.OnListFragmentInteractionListener;
-import com.example.gbd.myapplication.functiontest.dummy.DummyContent.DummyItem;
+import com.example.gbd.myapplication.ManuItemFragment.OnListFragmentInteractionListener;
+import com.example.gbd.myapplication.dummy.DummyContent.DummyItem;
 
 import java.util.List;
 
@@ -18,12 +17,12 @@ import java.util.List;
  * specified {@link OnListFragmentInteractionListener}.
  * TODO: Replace the implementation with code for your data type.
  */
-public class MyItemRecyclerViewAdapter extends RecyclerView.Adapter<MyItemRecyclerViewAdapter.ViewHolder> {
+public class ManuItemRecyclerViewAdapter extends RecyclerView.Adapter<ManuItemRecyclerViewAdapter.ViewHolder> {
 
     private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public MyItemRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public ManuItemRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }

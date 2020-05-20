@@ -22,7 +22,7 @@ void addressAndVarTestDo(JNIEnv *env, jstring jtext, std::string& text)
 extern "C"
 JNIEXPORT jstring
 JNICALL
-Java_com_example_gbd_myapplication_MainActivity_stringFromJNI(
+Java_com_example_gbd_myapplication_nativetest_NativeTestActivity_stringFromJNI(
         JNIEnv *env,
         jobject /* this */) {
     std::string hello = "Hello from C++";
@@ -32,7 +32,7 @@ Java_com_example_gbd_myapplication_MainActivity_stringFromJNI(
 extern "C"
 JNIEXPORT void
 JNICALL
-Java_com_example_gbd_myapplication_MainActivity_addressAndVarTest(
+Java_com_example_gbd_myapplication_nativetest_NativeTestActivity_addressAndVarTest(
         JNIEnv *env,
         jobject /* this */, jstring text) {
     std::string testText;

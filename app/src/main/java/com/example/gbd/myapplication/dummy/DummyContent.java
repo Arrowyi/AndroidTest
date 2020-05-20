@@ -1,9 +1,7 @@
-package com.example.gbd.myapplication.functiontest.dummy;
+package com.example.gbd.myapplication.dummy;
 
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Helper class for providing sample content for user interfaces created by
@@ -19,8 +17,10 @@ public class DummyContent {
     public static final List<DummyItem> ITEMS = new ArrayList<DummyItem>();
 
     public static DummyItem[] dummyItems = {
-            new DummyItem(android.R.drawable.btn_star, "IOTest"
-                    , "com.example.gbd.myapplication.functiontest.IOTest.IOTestFragment")
+            new DummyItem(android.R.drawable.btn_star, "IO test"
+                    , "com.example.gbd.myapplication.functiontest.FunctionTestMainActivity"),
+            new DummyItem(android.R.drawable.btn_star, "Native test"
+                    , "com.example.gbd.myapplication.nativetest.NativeTestActivity")
     };
 
 

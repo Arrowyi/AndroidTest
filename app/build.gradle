@@ -29,8 +29,8 @@ android {
 
     flavorDimensions 'default'
 
-    productFlavors{
-        otherFlavorTest{
+    productFlavors {
+        otherFlavorTest {
             dimension 'default'
             applicationId "com.example.gbd.otherflavortest"
         }

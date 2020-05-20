@@ -1,26 +1,20 @@
 package com.example.gbd.myapplication;
 
-import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
-import android.app.FragmentTransaction;
-import android.widget.TextView;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 
+import com.example.gbd.myapplication.dummy.DummyContent;
 import com.example.gbd.myapplication.functiontest.FunctionTestMainActivity;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ManuItemFragment.OnListFragmentInteractionListener {
 
-    // Used to load the 'native-lib' library on application startup.
-    static {
-        System.loadLibrary("native-lib");
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +32,9 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        // Example of a call to a native method
-        TextView tv = (TextView) findViewById(R.id.sample_text);
-        tv.setText(stringFromJNI());
+        getFragmentManager().beginTransaction()
+                .add(R.id.content_main, ManuItemFragment.newInstance(1))
+                .addToBackStack("MenuList").commit();
     }
 
     @Override
@@ -58,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
         int id = item.getItemId();
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
-            addressAndVarTest("addressAndVarTest test");
+//            addressAndVarTest("addressAndVarTest test");
             return true;
         } else if (id == R.id.action_io) {
             Intent intent = new Intent(this, FunctionTestMainActivity.class);
@@ -66,15 +60,23 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-
         return super.onOptionsItemSelected(item);
     }
 
-    /**
-     * A native method that is implemented by the 'native-lib' native library,
-     * which is packaged with this application.
-     */
-    public native String stringFromJNI();
+    @Override
+    public void onListFragmentInteraction(DummyContent.DummyItem item) {
 
-    public native void addressAndVarTest(String text);
+        try {
+            Class c = Class.forName(item.fragment);
+            Intent intent = new Intent(this, c);
+            startActivity(intent);
+
+        } catch (ClassNotFoundException e) {
+
+        }
+
+
+    }
+
+
 }
