@@ -74,8 +74,14 @@ public class MainActivity extends AppCompatActivity implements ManuItemFragment.
         } catch (ClassNotFoundException e) {
 
         }
+    }
 
-
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        if (getFragmentManager().getBackStackEntryCount() <= 0) {
+            finish();
+        }
     }
 
 

@@ -19,7 +19,10 @@ public class NativeTestActivity extends AppCompatActivity {
 
         // Example of a call to a native method
         TextView tv = (TextView) findViewById(R.id.native_text);
-        tv.setText(stringFromJNI());
+        String fromJNI = stringFromJNI();
+        tv.setText(fromJNI);
+
+        addressAndVarTest(fromJNI);
     }
 
     /**
