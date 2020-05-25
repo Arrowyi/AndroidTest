@@ -18,5 +18,6 @@ public @interface CommonSettings {
     }
 
     Type type();
-    String value();
+    String defaultValue() default "";
+    String accessor() default "";
 }

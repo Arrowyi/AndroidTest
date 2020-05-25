@@ -10,11 +10,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.example.commonsettings.CommonSettings;
+import com.example.commonsettings.configmanager.ConfigManager;
 import com.example.gbd.myapplication.dummy.DummyContent;
 import com.example.gbd.myapplication.functiontest.FunctionTestMainActivity;
 
 public class MainActivity extends AppCompatActivity implements ManuItemFragment.OnListFragmentInteractionListener {
 
+    @CommonSettings(type = CommonSettings.Type.BOOLEAN)
+    public static final String THE_FIRST_TEST_SETTING = "THE_FIRST_TEST_SETTING";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +26,8 @@ public class MainActivity extends AppCompatActivity implements ManuItemFragment.
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        ConfigManager.init();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
