@@ -20,7 +20,9 @@ public class DummyContent {
             new DummyItem(android.R.drawable.btn_star, "IO test"
                     , "com.example.gbd.myapplication.functiontest.FunctionTestMainActivity"),
             new DummyItem(android.R.drawable.btn_star, "Native test"
-                    , "com.example.gbd.myapplication.nativetest.NativeTestActivity")
+                    , "com.example.gbd.myapplication.nativetest.NativeTestActivity"),
+            new DummyItem(android.R.drawable.btn_star, "Rx test"
+                    , "com.gbd.example.rxtest.RxTestActivity")
     };
 
 

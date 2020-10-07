@@ -27,7 +27,7 @@ public class MainActivity extends AppCompatActivity implements ManuItemFragment.
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        ConfigManager.init();
+//        ConfigManager.init();
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
